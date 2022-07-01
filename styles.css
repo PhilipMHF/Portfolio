@@ -15,6 +15,7 @@
 }
 
 #welcome-section-wrapper {
+    background: url(https://img.freepik.com/free-vector/ink-splash-duotone-stripe-background_1409-1379.jpg?t=st=1656696425~exp=1656697025~hmac=927ce33ac34eda7ccbe8fca746e943a3775891c70a2d80281f5fce2de8a506fe&w=996);
     padding: 1.2rem;
     height: 100vh;
 }
@@ -165,7 +166,7 @@
     background-color: var(--border-clr);
     font-size: 1.4em;
     color: rgb(239,239,239);
-    margin: 1rem auto 0;
+    margin: 0 auto 0;
     border-radius: 50%;
     height: calc(7rem + 5vw);
     width: calc(7rem + 5vw);
