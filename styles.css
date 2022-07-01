@@ -15,9 +15,20 @@
 }
 
 #welcome-section-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
     background: url(https://img.freepik.com/free-vector/ink-splash-duotone-stripe-background_1409-1379.jpg?t=st=1656696425~exp=1656697025~hmac=927ce33ac34eda7ccbe8fca746e943a3775891c70a2d80281f5fce2de8a506fe&w=996);
     padding: 1.2rem;
-    height: 100vh;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transition: 0.45s transform cubic-bezier(0.600, -0.280, 0.735, 0.045), 
+                        0.45s opacity cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            transition: 0.45s transform cubic-bezier(0.600, -0.280, 0.735, 0.045), 
+                        0.45s opacity cubic-bezier(0.600, -0.280, 0.735, 0.045);
+    opacity: 1;
 }
 
 .border {
@@ -182,6 +193,40 @@
     text-align: center;
     -webkit-animation: heartbeat 3s ease-in-out 5s infinite both;
 	        animation: heartbeat 3s ease-in-out 5s infinite both;
+}
+
+
+/***** Main Content Styling *****/
+
+#main-doc {
+    background-color: red;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 0;
+    -webkit-transition: 0.5s transform cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s, 
+                        0.5s opacity cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s;
+            transition: 0.5s transform cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s, 
+                        0.5s opacity cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s;
+}
+
+#main-toggle:checked ~ #main-doc {
+    height: unset;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    opacity: 1;
+}
+
+#main-toggle:checked ~ #welcome-section-wrapper {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      opacity: 0;
 }
 
 
