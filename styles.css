@@ -1,24 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 *, ::before, ::after {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root {
     --font-welcome: 'Fugaz One', cursive;
     --font-carousel: 'Roboto Mono', monospace;
-    --border-clr: #3f3f3f;
+    --font-main: 'Poppins', sans-serif;
+    --font-main2: 'Abril Fatface', cursive;
+    --border-clr: #d6d6d6;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body, a {
+    color: rgb(233, 233, 233);
+}
+
+/***** Welcome Section Styling *****/
 
 #welcome-section-wrapper {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: url(https://img.freepik.com/free-vector/ink-splash-duotone-stripe-background_1409-1379.jpg?t=st=1656696425~exp=1656697025~hmac=927ce33ac34eda7ccbe8fca746e943a3775891c70a2d80281f5fce2de8a506fe&w=996);
+    background-color: #330021;
     padding: 1.2rem;
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg);
@@ -29,6 +50,37 @@
             transition: 0.45s transform cubic-bezier(0.600, -0.280, 0.735, 0.045), 
                         0.45s opacity cubic-bezier(0.600, -0.280, 0.735, 0.045);
     opacity: 1;
+    z-index: 1;
+}
+
+#welcome-section-wrapper::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+    z-index: -1;
+}
+
+#welcome-section-wrapper::after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
 }
 
 .border {
@@ -128,6 +180,7 @@
 }
 
 #carousel {
+    font-size: 2rem;
     position: absolute;
     inset: 0;
     width: -webkit-max-content;
@@ -135,7 +188,6 @@
     width: max-content;
     margin: 0 auto;
     top: 3rem;
-    font-size: 2rem;
     -webkit-animation: carousel-vertical 12s ease-in-out infinite 1.2s;
             animation: carousel-vertical 12s ease-in-out infinite 1.2s;
 }
@@ -162,7 +214,8 @@
 #welcome__btn {
     position: absolute;
     inset: auto 0 0 0;
-    margin: 0 auto;
+    margin: 0 auto 1px;
+    cursor: pointer;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
@@ -174,7 +227,7 @@
 }
 
 #welcome__btn p {
-    background-color: var(--border-clr);
+    background-color: #77024c;
     font-size: 1.4em;
     color: rgb(239,239,239);
     margin: 0 auto 0;
@@ -198,11 +251,17 @@
 
 /***** Main Content Styling *****/
 
-#main-doc {
-    background-color: red;
+#main-toggle:checked ~ #welcome-section-wrapper {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    opacity: 0;
+}
+
+#main-section {
     position: absolute;
     width: 100%;
     height: 0;
+    z-index: 1;
     -webkit-transform: rotateX(100deg);
             transform: rotateX(100deg);
     -webkit-transform-origin: bottom;
@@ -214,8 +273,8 @@
                         0.5s opacity cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s;
 }
 
-#main-toggle:checked ~ #main-doc {
-    height: unset;
+#main-toggle:checked ~ #main-section {
+    height: auto;
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
     -webkit-transform-origin: bottom;
@@ -223,16 +282,218 @@
     opacity: 1;
 }
 
-#main-toggle:checked ~ #welcome-section-wrapper {
-      -webkit-transform: rotateX(-100deg);
-              transform: rotateX(-100deg);
-      opacity: 0;
+#nav-bar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    width: max-content;
+    margin: 0 auto;
+    z-index: 50;
+}
+
+#nav-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#nav-list > * {
+    text-align: center;
+}
+
+.nav-link {
+    font-family: var(--font-main);
+    font-size: min(1.5rem, 4.5vw);
+    font-weight: 700;
+    font-style: italic;
+    padding: 0.5rem;
+}
+
+header {
+    background-color: #000036;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    top: 0;
+    font-family: var(--font-main);
+    margin: 0 auto;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+    z-index: -1;
+}
+
+header::after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+#header-carousel-wrapper {
+    width: 100%;
+    max-width: max-content;
+    margin: 0 auto;
+    padding-top: 6rem;
+}
+
+#header-carousel {
+    font-family: var(--font-main2);
+    font-size: min(9vw, 2.3rem);
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 2.5px;
+    position: relative;
+    max-width: max-content;
+    overflow: hidden;
+}
+
+#main-toggle:checked ~ #main-section #header-carousel {
+    animation: typewriter 7s infinite steps(25) 1.5s, span-border-pulse 1s infinite steps(2);
+}
+
+#header-carousel span:first-of-type {
+    display: block;
+    width: 0;
+    overflow: hidden;
+}
+
+#main-toggle:checked ~ #main-section #header-carousel span:first-of-type {
+    animation: first-span-carousel 14s infinite ease-in-out 1.5s;
+}
+
+#header-carousel span:last-of-type {
+    display: block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+#main-toggle:checked ~ #main-section #header-carousel span:last-of-type {
+    animation: second-span-carousel 14s infinite linear 1.5s;
+}
+
+#author-description {
+    font-size: min(6vw, 1.25rem);
+    font-weight: 500;
+    max-width: 500px;
+    margin: min(15vw, 7rem) auto 0;
+    padding: 1rem;
+    text-align: justify;
+}
+
+.fa-angles-down {
+    font-size: 5rem;
+    position: absolute;
+    inset: auto 0 0 0;
+    width: max-content;
+    margin: 0 auto;
+}
+
+main {
+    font-family: var(--font-main);
+}
+
+.main-section {
+    position: relative;
+    padding: 2rem 3rem;
+    z-index: 1;
+}
+
+.main-section::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+    z-index: -1;
+}
+
+.main-section::after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.05;   
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+#background {
+    background-color: #003312;
+}
+
+#background p {
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 600px;
+
+}
+
+#work {
+    background-color: #363200;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.work-img-container {
+    position: relative;
+}
+
+.site-img {
+    position: absolute;
+    inset: 26% 0 auto 0;
+    margin: 0 auto;
+    width: 50%;
+    height: 40%;
+    border-radius: 2px;
+}
+
+.macbook-frame {
+    max-width: 100%;
 }
 
 
 /***** Adjusting margin and button size on welcome screen for large displays (bigger than 1024px width) *****/
 
 @media only screen and (min-width: 1024px) {
+    
     .welcome-txt.one {
         margin-top: 10vh;
     }
@@ -769,5 +1030,99 @@
     100% {
         -webkit-transform: scaleY(1);
                 transform: scaleY(1);        
+    }
+ }
+
+ /******* Typewriter text animation *******/
+
+ @keyframes typewriter {
+    0% {
+        width: 0%;
+    }
+
+    33% {
+        width: 100%;
+    }
+
+    67% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+ }
+
+ @-webkit-keyframes typewriter {
+    0% {
+        width: 0%;
+    }
+
+    33% {
+        width: 100%;
+    }
+
+    67% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+ }
+
+ @keyframes first-span-carousel {
+    0% {
+        height: 100%;
+        width: 100%;        
+    }
+
+    50% { 
+        height: 100%;
+        width: 100%;        
+    }
+
+    50.001% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+ }
+
+ @keyframes second-span-carousel {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    50% {
+        height: 0;
+        width: 0;
+    }
+
+    50.001% {
+        height: 100%;
+        width: 100%;
+    }
+
+    100% {
+        height: 100%;
+        width: 100%;
+    }
+ }
+
+
+ @keyframes span-border-pulse {
+
+    0% {
+        border-right: 2px solid transparent;
+    }
+
+    100% {
+        border-right: 2px solid black;
     }
  }
