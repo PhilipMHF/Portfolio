@@ -19,7 +19,7 @@
       style="display: none"
       checkedd
     />
-    <div id="welcome-section-wrapper" style="display: noned">
+    <div class="welcome-section-wrapper bg" style="display: noned">
       <div id="welcome-section">
         <hr class="border top" />
         <hr class="border bottom" />
@@ -47,15 +47,15 @@
         >
       </div>
     </div>
+    <nav id="nav-bar">
+      <ul id="nav-list">
+        <li><a class="nav-link" href="#background">My Background</a></li>
+        <li><a class="nav-link" href="#work">My Work</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
     <div id="main-section">
-      <nav id="nav-bar">
-        <ul id="nav-list">
-          <li><a class="nav-link" href="#my_background">My Background</a></li>
-          <li><a class="nav-link" href="#my_work">My Work</a></li>
-          <li><a class="nav-link" href="#contact_me">Contact</a></li>
-        </ul>
-      </nav>
-      <header>
+      <header class="bg">
         <div id="header-carousel-wrapper">
           <div id="header-carousel">
             <span>Junior Developer</span>
@@ -69,10 +69,13 @@
           Scroll down to learn more about me, my background, and my work
           experience.
         </p>
-        <i class="fa-solid fa-angles-down"></i>
+        <a href="#background">
+          <i class="fa-solid fa-angles-down"></i>
+        </a>
       </header>
       <main id="main-doc">
-        <section id="background" class="main-section">
+        <section id="background" class="main-section bg">
+          <h2>My Background</h2>
           <p>
             Hey, buddy! <br />
             I hope you're having a great day. I'm Philip, an English teacher and
@@ -84,53 +87,289 @@
             section, you can see some of the work I've done so far.
           </p>
         </section>
-        <section id="work" class="main-section">
-          <article class="work-img-container">
-            <img
-              class="macbook-frame"
-              src="/images/macbookpro.svg"
-              alt=""
-            /><img
-              class="site-img"
-              src="//unsplash.it/500/500"
-              alt="placeholder img"
-            />
-          </article>
-          <article class="work-img-container">
-            <img
-              class="macbook-frame"
-              src="/images/macbookpro.svg"
-              alt=""
-            /><img
-              class="site-img"
-              src="//unsplash.it/500/500"
-              alt="placeholder img"
-            />
-          </article>
-          <article class="work-img-container">
-            <img
-              class="macbook-frame"
-              src="/images/macbookpro.svg"
-              alt=""
-            /><img
-              class="site-img"
-              src="//unsplash.it/500/500"
-              alt="placeholder img"
-            />
-          </article>
-          <article class="work-img-container">
-            <img
-              class="macbook-frame"
-              src="/images/macbookpro.svg"
-              alt=""
-            /><img
-              class="site-img"
-              src="//unsplash.it/500/500"
-              alt="placeholder img"
-            />
-          </article>
+        <section id="work" class="main-section bg">
+          <h2>My Work</h2>
+          <div id="work-container">
+            <figure class="work-img-container">
+              <div class="image-container">
+                <img
+                  class="macbook-frame"
+                  src="/images/macbookpro.svg"
+                  alt="a macbook frame containing images of my sites"
+                  loading="lazy"
+                />
+                <img
+                  class="site-img"
+                  src="https://i.postimg.cc/K8xTChVR/Screenshot-2022-07-03-185551.png"
+                  alt="picture of a tribute page to quentin tarantino"
+                  loading="lazy"
+                />
+                <div class="image-hover-effect">
+                  <div class="hover caption-icons">
+                    <div class="hover caption-icon github">
+                      <a
+                        class="work-link"
+                        href="https://github.com/PhilipMHF/Tribute-to-Quintin-Tarantino"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                        <p>View on GitHub</p>
+                      </a>
+                    </div>
+                    <div class="caption-icon codepen">
+                      <a
+                        class="work-link"
+                        href="https://codepen.io/philipmhf/pen/poLJQxe"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-codepen"></i>
+                        <p>View on Codepen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="work-caption">
+                Tribute Page
+                <hr class="seperator" />
+                <div class="caption-icons">
+                  <div class="caption-icon github">
+                    <a
+                      class="work-link"
+                      href="https://github.com/PhilipMHF/Tribute-to-Quintin-Tarantino"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      <p>View on GitHub</p>
+                    </a>
+                  </div>
+                  <div class="caption-icon codepen">
+                    <a
+                      class="work-link"
+                      href="https://codepen.io/philipmhf/pen/poLJQxe"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-codepen"></i>
+                      <p>View on Codepen</p>
+                    </a>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="work-img-container">
+              <div class="image-container">
+                <img
+                  class="macbook-frame"
+                  src="/images/macbookpro.svg"
+                  alt="a macbook frame containing images of my sites"
+                  loading="lazy"
+                /><img
+                  class="site-img"
+                  src="https://i.postimg.cc/mg9mb42R/Screenshot-2022-07-03-185552.png"
+                  alt="picture of a site named html for beginners"
+                  loading="lazy"
+                />
+                <div class="image-hover-effect">
+                  <div class="hover caption-icons">
+                    <div class="hover caption-icon github">
+                      <a
+                        class="work-link"
+                        href="https://github.com/PhilipMHF/HTML-for-Beginners"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                        <p>View on GitHub</p>
+                      </a>
+                    </div>
+                    <div class="caption-icon codepen">
+                      <a
+                        class="work-link"
+                        href="https://codepen.io/philipmhf/pen/VwXLVLx"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-codepen"></i>
+                        <p>View on Codepen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="work-caption">
+                Technical Documentation
+                <hr class="seperator" />
+                <div class="caption-icons">
+                  <div class="caption-icon github">
+                    <a
+                      class="work-link"
+                      href="https://github.com/PhilipMHF/HTML-for-Beginners"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      <p>View on GitHub</p>
+                    </a>
+                  </div>
+                  <div class="caption-icon codepen">
+                    <a
+                      class="work-link"
+                      href="https://codepen.io/philipmhf/pen/VwXLVLx"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-codepen"></i>
+                      <p>View on Codepen</p>
+                    </a>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="work-img-container">
+              <div class="image-container">
+                <img
+                  class="macbook-frame"
+                  src="/images/macbookpro.svg"
+                  alt="a macbook frame containing images of my sites"
+                  loading="lazy"
+                /><img
+                  class="site-img"
+                  src="https://i.postimg.cc/pTBsjJgd/Screenshot-2022-07-03-190545.png"
+                  alt="picture of a landing page for an online gym"
+                  loading="lazy"
+                />
+                <div class="image-hover-effect">
+                  <div class="hover caption-icons">
+                    <div class="hover caption-icon github">
+                      <a
+                        class="work-link"
+                        href="https://github.com/PhilipMHF/Online-gym-landing-page"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                        <p>View on GitHub</p>
+                      </a>
+                    </div>
+                    <div class="caption-icon codepen">
+                      <a
+                        class="work-link"
+                        href="https://codepen.io/philipmhf/pen/oNqXQNp"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-codepen"></i>
+                        <p>View on Codepen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="work-caption">
+                Landing Page
+                <hr class="seperator" />
+                <div class="caption-icons">
+                  <div class="caption-icon github">
+                    <a
+                      class="work-link"
+                      href="https://github.com/PhilipMHF/Online-gym-landing-page"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      <p>View on GitHub</p>
+                    </a>
+                  </div>
+                  <div class="caption-icon codepen">
+                    <a
+                      class="work-link"
+                      href="https://codepen.io/philipmhf/pen/oNqXQNp"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-codepen"></i>
+                      <p>View on Codepen</p>
+                    </a>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="work-img-container">
+              <div class="image-container">
+                <img
+                  class="macbook-frame"
+                  src="/images/macbookpro.svg"
+                  alt="a macbook frame containing images of my sites"
+                  loading="lazy"
+                /><img
+                  class="site-img"
+                  src="https://i.postimg.cc/853jt28X/Screenshot-2022-07-03-190745.png"
+                  alt="picture of a site containing a teacher application form"
+                  loading="lazy"
+                />
+                <div class="image-hover-effect">
+                  <div class="hover caption-icons">
+                    <div class="hover caption-icon github">
+                      <a
+                        class="work-link"
+                        href="https://github.com/PhilipMHF/Teacher_Applicaiton_Form"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                        <p>View on GitHub</p>
+                      </a>
+                    </div>
+                    <div class="caption-icon codepen">
+                      <a
+                        class="work-link"
+                        href="https://codepen.io/philipmhf/pen/oNqXQNp"
+                        target="_blank"
+                      >
+                        <i class="fa-brands fa-codepen"></i>
+                        <p>View on Codepen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figcaption class="work-caption">
+                Online Form
+                <hr class="seperator" />
+                <div class="caption-icons">
+                  <div class="caption-icon github">
+                    <a
+                      class="work-link"
+                      href="https://github.com/PhilipMHF/Teacher_Applicaiton_Form"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      <p>View on GitHub</p>
+                    </a>
+                  </div>
+                  <div class="caption-icon codepen">
+                    <a
+                      class="work-link"
+                      href="https://codepen.io/philipmhf/pen/oNqXQNp"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-codepen"></i>
+                      <p>View on Codepen</p>
+                    </a>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
         </section>
-        <section id="contact" class="main-section"></section>
+        <section id="contact" class="main-section bg">
+          <h2>Contact Me</h2>
+          <div id="contact-form">
+          <p>Well, you made it!
+            <br> <br>
+            Thanks for time you took to make it here. Just in case you want to talk, be it either a friendly message or a job offer, you can do it thought here.
+          </p>
+            <form action="mailto:m.h.fzade@gmail.com" method="post" enctype="text/plain">
+              <input type="text" name="name" id="name" placeholder="e.g., John Smith" required>
+              <input type="text" name="mail" id="mail" placeholder="e.g., example@mail.com" required>
+              <textarea name="comment" id="comment" placeholder="Write your message here" required></textarea>
+              <div id="form-buttons">
+              <button type="submit">Send</button>
+              <button type="reset">Clear</button>
+              </div>
+            </form>
+        </section>
       </main>
     </div>
   </body>
