@@ -23,10 +23,14 @@
     --border-clr: #d6d6d6;
 }
 
-@media (hover:none) {
-    ::-webkit-scrollbar {
-        display: none;
-    }
+::-webkit-scrollbar {
+    width: 0px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
 }
 
 
@@ -45,8 +49,14 @@ body, a {
     color: rgb(233, 233, 233);
 }
 
+.welcome-section-wrapper > *, header > *, #main-doc section > * {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 /***** Welcome Section Styling *****/
 #nav-bar {
+    background-color: rgba(0, 0, 0, 0.5);
     transform: scale(0);
     transform-origin: center;
     transition: 0.3s transform ease-in-out 1s;
@@ -190,6 +200,7 @@ body, a {
 
 
 #carousel-wrapper {
+    font-size: 2rem;
     position: relative;
     margin-top: 2rem;
     overflow: hidden;
@@ -198,7 +209,6 @@ body, a {
 }
 
 #carousel {
-    font-size: 2rem;
     position: absolute;
     inset: 0;
     width: -webkit-max-content;
@@ -244,7 +254,7 @@ body, a {
             animation: bounce-in-top 1.1s both 3s;
 }
 
-#welcome__btn p {
+#welcome__btn span {
     background-color: #77024c;
     font-size: 1.4em;
     color: rgb(239,239,239);
@@ -309,9 +319,9 @@ body, a {
     top: 0;
     left: 0;
     right: 0;
-    width: max-content;
+    width: 100%;
     margin: 0 auto;
-    z-index: 50;
+    z-index: 2;
 }
 
 #nav-list {
@@ -633,7 +643,7 @@ main {
         display: none;
     }
 
-    #welcome__btn p {
+    #welcome__btn span {
         height: min(calc(7rem + 5vw), 8rem);
         width: min(calc(7rem + 5vw), 8rem);
     }

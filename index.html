@@ -17,33 +17,32 @@
       name="main-revealer"
       id="main-toggle"
       style="display: none"
-      checkedd
     />
-    <div class="welcome-section-wrapper bg" style="display: noned">
+    <div class="welcome-section-wrapper bg">
       <div id="welcome-section">
         <hr class="border top" />
         <hr class="border bottom" />
         <hr class="border left" />
         <hr class="border right" />
-        <h1>
+        <div id="welcome-text">
           <span class="welcome-txt one">Hey, stranger!</span>
           <span class="welcome-txt two">I'm Philip</span>
           <div id="carousel-wrapper">
             &nbsp;
-            <span id="carousel">
+            <div id="carousel">
               <div class="carousel-txt word1">Develper</div>
               <div class="carousel-txt word2">Gamer</div>
               <div class="carousel-txt word3">Tech&nbsp;Lover</div>
               <div class="carousel-txt word4">Teacher</div>
-            </span>
+            </div>
           </div>
-          <span class="welcome-txt three"
-            >Would you like to know <br />
-            more about me?</span
-          >
-        </h1>
+          <div class="welcome-txt three">
+            Would you like to know <br />
+            more about me?
+          </div>
+        </div>
         <label for="main-toggle" id="welcome__btn"
-          ><p>Of course<br />I do!</p></label
+          ><span>Of course<br />I do!</span></label
         >
       </div>
     </div>
@@ -356,19 +355,44 @@
         <section id="contact" class="main-section bg">
           <h2>Contact Me</h2>
           <div id="contact-form">
-          <p>Well, you made it!
-            <br> <br>
-            Thanks for time you took to make it here. Just in case you want to talk, be it either a friendly message or a job offer, you can do it thought here.
-          </p>
-            <form action="mailto:m.h.fzade@gmail.com" method="post" enctype="text/plain">
-              <input type="text" name="name" id="name" placeholder="e.g., John Smith" required>
-              <input type="text" name="mail" id="mail" placeholder="e.g., example@mail.com" required>
-              <textarea name="comment" id="comment" placeholder="Write your message here" required></textarea>
+            <p>
+              Well, you made it! <br />
+              <br />
+              Thanks for time you took to make it here. Just in case you want to
+              talk, be it either a friendly message or a job offer, you can do
+              it thought here.
+            </p>
+            <form
+              action="mailto:m.h.fzade@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="e.g., John Smith"
+                required
+              />
+              <input
+                type="text"
+                name="mail"
+                id="mail"
+                placeholder="e.g., example@mail.com"
+                required
+              />
+              <textarea
+                name="comment"
+                id="comment"
+                placeholder="Write your message here"
+                required
+              ></textarea>
               <div id="form-buttons">
-              <button type="submit">Send</button>
-              <button type="reset">Clear</button>
+                <button type="submit">Send</button>
+                <button type="reset">Clear</button>
               </div>
             </form>
+          </div>
         </section>
       </main>
     </div>
