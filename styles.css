@@ -85,11 +85,11 @@ body, a {
     position: absolute;
     top: 0;
     right: -10%;
-    width: 55%;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 2rem 20rem 2rem 2rem;
-    transform: skewX(7deg);
+    transform: skewX(7deg) translateX(45%);
     z-index: -1;
 }
 
@@ -99,11 +99,11 @@ body, a {
     position: absolute;
     top: 0;
     right: -10%;
-    width: 55%;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 2rem 20rem 2rem 2rem;
-    transform: skewX(20deg);
+    transform: skewX(20deg) translateX(45%);
     z-index: -1;
 }
 
@@ -249,7 +249,7 @@ body, a {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: calc(7.5rem + 5vw);
+    bottom: calc(8.5rem + 5vw);
     font-size: min(6vw, 1.6rem);
     font-weight: 400;
     -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 2.5s;
@@ -502,17 +502,17 @@ main {
     font-family: var(--font-main);
 }
 
+main h2 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    margin-bottom: 1.5rem !important;
+}
+
 .main-section {
     position: relative;
     padding: 2rem 3rem;
     z-index: 1;
-}
-
-.main-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: 1.5rem;
 }
 
 #background {
@@ -704,9 +704,17 @@ main {
     color: white;
     padding: 0.4em;
     width: 40%;
+    border: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: #8000FF;
+    background: #8000FF;
+    transition: 200ms background ease-in-out;
+}
+
+@media (hover:hover) {
+#form-buttons button:hover {
+    background: #6900d1;
+}
 }
 
 /***** Adjusting margin and button size on welcome screen for large displays (bigger than 1024px width) *****/
@@ -731,6 +739,16 @@ main {
     }
 }
 
+
+@media only screen and (min-width:481px) and (max-width:1024px) and (orientation: portrait) {
+    .welcome-txt.one {
+        margin-top: 15rem;
+    }
+
+    .welcome-txt.three br {
+        display: none;
+    }
+}
 
 /**** Animations ****/
 
@@ -1064,147 +1082,6 @@ main {
     }
  }
 
-/*******
- @-webkit-keyframes carousel-vertical {
-    0% {
-        top: 0;
-    }
-
-    24% {
-        top: 0;
-    }
-    
-    25% {
-        top: -3rem;
-    }
-
-    49% {
-        top: -3rem;
-    }
-
-    50% {
-        top: -6rem;
-    }
-
-    74% {
-        top: -6rem;
-    }
-
-    75% {
-        top: -9rem;
-    }
-
-    100% {
-        top: -9rem;
-    }
- }
-
- @keyframes carousel-vertical {
-    0% {
-        top: 0;
-    }
-
-    24% {
-        top: 0;
-    }
-    
-    25% {
-        top: -3rem;
-    }
-
-    49% {
-        top: -3rem;
-    }
-
-    50% {
-        top: -6rem;
-    }
-
-    74% {
-        top: -6rem;
-    }
-
-    75% {
-        top: -9rem;
-    }
-
-    100% {
-        top: -9rem;
-    }
- }
-
- @-webkit-keyframes carousel-horizontal {
-    
-    0% {
-        width: 0%;
-    }
-
-    5% {
-        width: 100%;
-    }
-
-    20% {
-        width: 100%;
-    }
-
-    24% {
-        width: 0%;
-    }
-
-    25% {
-        width: 0%;
-    }
-
-    30% {
-        width: 100%;
-    }
-
-    45% {
-        width: 100%;
-    }
-
-    49% {
-        width: 0%;
-    }
-
-    50% {
-        width: 0%;
-    }
-
-    55% {
-        width: 100%;
-    }
-
-    70% {
-        width: 100%;
-    }
-
-    74% {
-        width: 0%;
-    }
-
-    75% {
-        width: 0%;
-    }
-
-    80% {
-        width: 100%;
-    }
-
-    95% {
-        width: 100%;
-    }
-
-    99% {
-        width: 0%;
-    }
-
-    100% {
-        width: 0%;
-    }
-
- }
-*************/
  @keyframes carousel-horizontal {
     
     0% {
