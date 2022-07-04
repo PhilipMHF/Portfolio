@@ -269,6 +269,15 @@ body, a {
 	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 2.5s;
 }
 
+.welcome-txt.three br {
+    display: none;
+}
+
+@media only screen and (max-width:480px) {
+    .welcome-txt.three br {
+        display: block;
+    }
+}
 #welcome__btn {
     position: absolute;
     inset: auto 0 0 0;
@@ -319,10 +328,6 @@ body, a {
     #carousel-wrapper {
         font-size: 1rem;
     }
-
-    .welcome-txt.three br {
-        display: none;
-    }
     .welcome-txt.three {
         font-size: 1.2rem;
         margin-top: 1rem;
@@ -351,9 +356,6 @@ body, a {
         margin-top: 0.5rem;
     }
 
-    .welcome-txt.three br {
-        display: none;
-    }
     .welcome-txt.three {
         font-size: 1rem;
         margin-top: 1rem;
@@ -844,10 +846,6 @@ main h2 {
         margin-top: 10vh;
     }
 
-    .welcome-txt.three br {
-        display: none;
-    }
-
     .welcome-txt.three {
         bottom: min(calc(8.5rem + 5vw), 9.5rem);
     }
@@ -862,10 +860,6 @@ main h2 {
 @media only screen and (min-width:481px) and (max-width:1024px) and (orientation: portrait) {
     .welcome-txt.one {
         margin-top: 15vh;
-    }
-
-    .welcome-txt.three br {
-        display: none;
     }
 }
 
