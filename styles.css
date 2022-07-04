@@ -397,7 +397,12 @@ body, a {
                         0.5s transform cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s;
 }
 
+#main-section, #nav-bar {
+    visibility: hidden;
+}
+
 #main-toggle:checked ~ #main-section {
+    visibility: visible;
     height: auto;
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
@@ -408,6 +413,7 @@ body, a {
 }
 
 #main-toggle:checked ~ #nav-bar {
+    visibility: visible;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
@@ -716,6 +722,25 @@ main h2 {
     .work-link:hover {
         color: #b8b8b8;
     }
+}
+
+#social-links {
+    margin-top: 2rem !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 3rem;
+
+}
+
+.social-link {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 #contact {
