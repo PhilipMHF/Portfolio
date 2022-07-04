@@ -183,15 +183,15 @@ body, a {
 }
 
 .welcome-txt.one {
-    font-size: min(9vw, 3.5rem);
+    font-size: min(9vw, 3rem);
     font-weight: 500;
     text-align: left;
-    margin-top: 20vh;
+    margin-top: min(20vh, 50px);
     -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 0.5s;
 	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 0.5s;
 }
 .welcome-txt.two {
-    font-size: min(16vw, 8rem);
+    font-size: min(16vw, 7rem);
     height: auto;
     width: 100%;
     -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 1.5s;
@@ -199,7 +199,7 @@ body, a {
 }
 
 #carousel-wrapper {
-    font-size: 2rem;
+    font-size: 1.8rem;
     position: relative;
     margin-top: 2rem;
     overflow: hidden;
@@ -214,12 +214,9 @@ body, a {
     width: -moz-max-content;
     width: max-content;
     margin: 0 auto;
-    top: 3rem;
-    -webkit-animation: carousel-vertical 12s ease-in-out infinite 1.2s;
-            animation: carousel-vertical 12s ease-in-out infinite 1.2s;
 }
 
-#carousel * {
+.carousel-txt {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -228,35 +225,33 @@ body, a {
     overflow: hidden;
 }
 
-.carousel.txt {
-    overflow: hidden;
-}
-/*
-.word1 {
-    -webkit-animation: word1 12s ease-in-out infinite 1.2s;
-            animation: word1 12s ease-in-out infinite 1.2s;
+.carousel-txt.word1 {
+    -webkit-animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word1 12s ease-in-out infinite 1.2s;
+            animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word1 12s ease-in-out infinite 1.2s;
 }
 
-.word2 {
-    -webkit-animation: word2 12s ease-in-out infinite 1.2s;
-            animation: word2 12s ease-in-out infinite 1.2s;
+.carousel-txt.word2 {
+    -webkit-animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word2 12s ease-in-out infinite 1.2s;
+            animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word2 12s ease-in-out infinite 1.2s;
 }
 
-.word3 {
-    -webkit-animation: word3 12s ease-in-out infinite 1.2s;
-            animation: word3 12s ease-in-out infinite 1.2s;
+.carousel-txt.word3 {
+    -webkit-animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word3 12s ease-in-out infinite 1.2s;
+            animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word3 12s ease-in-out infinite 1.2s;
 }
 
-.word4 {
-    -webkit-animation: word4 12s ease-in-out infinite 1.2s;
-            animation: word4 12s ease-in-out infinite 1.2s;
+.carousel-txt.word4 {
+    -webkit-animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word4 12s ease-in-out infinite 1.2s;
+            animation: carousel-horizontal 12s ease-in-out infinite 1.2s, word4 12s ease-in-out infinite 1.2s;
 }
-*/
 
 .welcome-txt.three {
-    font-size: min(6vw, 2rem);
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: calc(7.5rem + 5vw);
+    font-size: min(6vw, 1.6rem);
     font-weight: 400;
-    margin-top: 2rem;
     -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 2.5s;
 	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 2.5s;
 }
@@ -318,6 +313,7 @@ body, a {
     .welcome-txt.three {
         font-size: 1.2rem;
         margin-top: 1rem;
+        bottom: calc(3.5rem + 5vw)
     }
 
     #welcome__btn span {
@@ -348,6 +344,7 @@ body, a {
     .welcome-txt.three {
         font-size: 1rem;
         margin-top: 1rem;
+        bottom: calc(3rem + 5vw)
     }
 
     #welcome__btn span {
@@ -658,7 +655,7 @@ main {
 #contact-form > * {
     flex: 1;
     max-width: 700px;
-    min-width: 200px;
+    min-width: 300px;
 }
 
 #contact p {
@@ -722,6 +719,10 @@ main {
 
     .welcome-txt.three br {
         display: none;
+    }
+
+    .welcome-txt.three {
+        bottom: min(calc(8.5rem + 5vw), 9.5rem);
     }
 
     #welcome__btn span {
@@ -974,111 +975,96 @@ main {
 
  @keyframes word1 {
     0% {
-        width: 100%;
-        height: unset;
+        height: 100%;
     }
 
     24% {
-        width: 100%;
-        height: unset;
+        height: 100%;
     }
 
     25% {
-        width: 0%;
         height: 0%;
     }
 
     100% {
-        width: 0%;
         height: 0%;
     }
  }
 
  @keyframes word2 {
     0% {
-        width: 0%;
         height: 0%;
     }
 
     24% {
-        width: 0%;
         height: 0%;
     }
 
     25% {
-        width: 100%;
-        height: unset;
+        height: 100%;
     }
 
     49% {
-        width: 100%;
-        height: unset;
+        height: 100%;
     }
 
     50% {
-        width: 0%;
         height: 0%;
     }
 
     100% {
-        width: 0%;
         height: 0%;
     }
  }
 
  @keyframes word3 {
     0% {
-        width: 0%;
-        height: 0%;
-    }
-
-    49% {
-        width: 0%;
         height: 0%;
     }
 
     50% {
-        width: 100%;
-        height: unset;
+        height: 0%;
     }
+
+    51% {
+        height: 100%;
+    }
+
     74% {
-        width: 100%;
-        height: unset;
+        height: 100%;
     }
 
     75%  {
-        width: 0%;
         height: 0%;
     }
 
     100% {
-        width: 0%;
         height: 0%;
     }
  }
 
  @keyframes word4 {
     0% {
-        width: 0%;
-        height: 0%;
-    }
-
-    74% {
-        width: 0%;
         height: 0%;
     }
 
     75% {
-        width: 100%;
-        height: unset;
+        height: 0%;
     }
+
+    76% {
+        height: 100%;
+    }
+    99% {
+        height: 100%;
+    }
+
     100% {
-        width: 100%;
-        height: unset;
+        height: 0%;
     }
  }
 
-
+/*******
  @-webkit-keyframes carousel-vertical {
     0% {
         top: 0;
@@ -1147,7 +1133,6 @@ main {
     }
  }
 
-/********************
  @-webkit-keyframes carousel-horizontal {
     
     0% {
@@ -1219,7 +1204,7 @@ main {
     }
 
  }
-
+*************/
  @keyframes carousel-horizontal {
     
     0% {
@@ -1292,7 +1277,6 @@ main {
 
  }
 
-****************/
  /**** Welcome Section Border Animations ****/
 
  @keyframes border-top-bottom {
