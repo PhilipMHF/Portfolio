@@ -6,6 +6,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *, ::before, ::after {
     margin: 0;
     padding: 0;
@@ -19,7 +21,7 @@
     --font-welcome: 'Fugaz One', cursive;
     --font-carousel: 'Roboto Mono', monospace;
     --font-main: 'Poppins', sans-serif;
-    --font-main2: 'Abril Fatface', cursive;
+    --font-main2: 'Azeret Mono', monospace;
     --border-clr: #d6d6d6;
 }
 
@@ -472,54 +474,73 @@ header {
     z-index: 1;
 }
 
-#header-carousel-wrapper {
-    width: 100%;
+#header-carousel {
+    position: relative;
+    font-family: var(--font-main2);
+    font-size: min(9vw, 2.3rem);
+    font-weight: 700;
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
     margin: 0 auto;
     padding-top: 6rem;
-}
-
-#header-carousel {
-    font-family: var(--font-main2);
-    font-size: min(9vw, 2.3rem);
-    font-weight: 700;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: left;
     white-space: nowrap;
     letter-spacing: 2.5px;
-    position: relative;
-    max-width: -webkit-max-content;
-    max-width: -moz-max-content;
-    max-width: max-content;
     overflow: hidden;
 }
 
-#main-toggle:checked ~ #main-section #header-carousel {
-    -webkit-animation: typewriter 7s infinite steps(25) 1.5s, span-border-pulse 1s infinite steps(2);
-            animation: typewriter 7s infinite steps(25) 1.5s, span-border-pulse 1s infinite steps(2);
+#main-toggle:checked ~ #main-section #header-carousel span:first-of-type::after, #main-toggle:checked ~ #main-section #header-carousel span:last-of-type::after  {
+    -webkit-animation: span-border-pulse 1s infinite steps(2);
+            animation: span-border-pulse 1s infinite steps(2);
+    
 }
 
 #header-carousel span:first-of-type {
+    position: relative;
     display: block;
     width: 0;
     overflow: hidden;
 }
 
+span:first-of-type::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:  0;
+    background-color: white;
+}
+
 #main-toggle:checked ~ #main-section #header-carousel span:first-of-type {
-    -webkit-animation: first-span-carousel 14s infinite ease-in-out 1.5s;
-            animation: first-span-carousel 14s infinite ease-in-out 1.5s;
+    -webkit-animation: first-span-carousel 14s infinite ease-in-out 1.5s, typewriter 7s infinite steps(16) 1.5s;
+            animation: first-span-carousel 14s infinite ease-in-out 1.5s, typewriter 7s infinite steps(16) 1.5s;
 }
 
 #header-carousel span:last-of-type {
+    position: relative;
     display: block;
     height: 0;
     width: 0;
     overflow: hidden;
 }
+
+span:last-of-type::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:  0;
+    background-color: white;
+}
+
 #main-toggle:checked ~ #main-section #header-carousel span:last-of-type {
-    -webkit-animation: second-span-carousel 14s infinite linear 1.5s;
-            animation: second-span-carousel 14s infinite linear 1.5s;
+    -webkit-animation: second-span-carousel 14s infinite linear 1.5s, typewriter 7s infinite steps(16) 1.5s;
+            animation: second-span-carousel 14s infinite linear 1.5s, typewriter 7s infinite steps(16) 1.5s;
 }
 
 #author-description {
@@ -1534,10 +1555,16 @@ main h2 {
 
     33% {
         width: 100%;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
     }
 
     67% {
         width: 100%;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;    
     }
 
     100% {
@@ -1551,11 +1578,17 @@ main h2 {
     }
 
     33% {
-        width: 100%;
+        width: 100%; 
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;     
     }
 
     67% {
         width: 100%;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
     }
 
     100% {
@@ -1655,11 +1688,11 @@ main h2 {
  @-webkit-keyframes span-border-pulse {
 
     0% {
-        border-right: 2px solid transparent;
+        width: 0;
     }
 
     100% {
-        border-right: 2px solid white;
+        width: 0.125em;
     }
  }
 
@@ -1667,11 +1700,11 @@ main h2 {
  @keyframes span-border-pulse {
 
     0% {
-        border-right: 2px solid transparent;
+        width: 0;
     }
 
     100% {
-        border-right: 2px solid white;
+        width: 0.125em;
     }
  }
 
